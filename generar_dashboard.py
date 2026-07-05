@@ -382,10 +382,10 @@ def generar_html(clima, paper, noticias, tareas, resumen_ia=None, consejo_ia=Non
             tareas_html += f"""
             <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/50 hover:border-indigo-500/30 hover:bg-slate-800/70 transition-all duration-200">
                 <div class="flex items-center h-6">
-                    <input type="checkbox" {checked_attr} disabled class="w-5 h-5 rounded border-slate-600 text-indigo-600 focus:ring-indigo-500 bg-slate-900 pointer-events-none transition-colors">
+                    <input type="checkbox" id="task-cb-{t.get('id')}" {checked_attr} onchange="toggleTaskStatus({t.get('id')}, this.checked)" class="w-5 h-5 rounded border-slate-600 text-indigo-600 focus:ring-indigo-500 bg-slate-900 transition-colors cursor-pointer">
                 </div>
                 <div class="flex-1 min-w-0">
-                    <p class="text-sm font-medium {line_through_class} break-words">{t.get('titulo')}</p>
+                    <p id="task-title-{t.get('id')}" class="text-sm font-medium {line_through_class} break-words">{t.get('titulo')}</p>
                     <div class="flex gap-2 mt-1.5 items-center">
                         <span class="text-[10px] px-2 py-0.5 rounded-full border {color_prioridad} font-medium">{t.get('prioridad')}</span>
                         <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-700/40 text-slate-400 border border-slate-700/50">{t.get('categoria', 'General')}</span>
@@ -527,6 +527,74 @@ def generar_html(clima, paper, noticias, tareas, resumen_ia=None, consejo_ia=Non
                 radial-gradient(at 100% 100%, rgba(30, 27, 75, 0.4) 0, transparent 50%);
         }}
     </style>
+    <!-- Script de interacción del Dashboard -->
+    <script>
+        async function toggleTaskStatus(id, checked) {{
+            const titleEl = document.getElementById('task-title-' + id);
+            if (titleEl) {{
+                if (checked) {{
+                    titleEl.classList.add('line-through', 'text-slate-500');
+                    titleEl.classList.remove('text-slate-200');
+                }} else {{
+                    titleEl.classList.remove('line-through', 'text-slate-500');
+                    titleEl.classList.add('text-slate-200');
+                }}
+            }}
+
+            // Guardar estado en localStorage para soporte fuera de línea / local independiente
+            try {{
+                localStorage.setItem('task-completed-' + id, checked);
+            }} catch (e) {{
+                console.warn('No se pudo guardar en localStorage:', e);
+            }}
+
+            try {{
+                const response = await fetch('/api/toggle-task', {{
+                    method: 'POST',
+                    headers: {{ 'Content-Type': 'application/json' }},
+                    body: JSON.stringify({{ id: id, completada: checked }})
+                }});
+                const data = await response.json();
+                if (data.success) {{
+                    console.log('Tarea ' + id + ' actualizada en el servidor.');
+                    if (window.parent && window.parent !== window) {{
+                        window.parent.postMessage({{ type: 'TASK_TOGGLED', id: id, completada: checked }}, '*');
+                    }}
+                }} else {{
+                    console.error('Error al actualizar la tarea:', data.error);
+                }}
+            }} catch (err) {{
+                console.warn('Sincronización con el servidor omitida (Modo Local Estándar sin API activo):', err);
+            }}
+        }}
+
+        // Al cargar la página, restaurar los estados guardados en localStorage
+        window.addEventListener('DOMContentLoaded', () => {{
+            try {{
+                const checkboxes = document.querySelectorAll('input[type="checkbox"][id^="task-cb-"]');
+                checkboxes.forEach(cb => {{
+                    const id = cb.id.replace('task-cb-', '');
+                    const stored = localStorage.getItem('task-completed-' + id);
+                    if (stored !== null) {{
+                        const isCompleted = stored === 'true';
+                        cb.checked = isCompleted;
+                        const titleEl = document.getElementById('task-title-' + id);
+                        if (titleEl) {{
+                            if (isCompleted) {{
+                                titleEl.classList.add('line-through', 'text-slate-500');
+                                titleEl.classList.remove('text-slate-200');
+                            }} else {{
+                                titleEl.classList.remove('line-through', 'text-slate-500');
+                                titleEl.classList.add('text-slate-200');
+                            }}
+                        }}
+                    }}
+                }});
+            }} catch (e) {{
+                console.warn('Error al restaurar estados de localStorage:', e);
+            }}
+        }});
+    </script>
 </head>
 <body class="text-slate-100 min-h-screen py-8 px-4 sm:px-6 lg:px-8 font-sans antialiased">
     <div class="max-w-7xl mx-auto space-y-8">
