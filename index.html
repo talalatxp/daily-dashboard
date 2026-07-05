@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Personal de IA y Productividad</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0b0f19;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(17, 24, 39, 0.9) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, rgba(30, 27, 75, 0.4) 0, transparent 50%);
+        }
+    </style>
+</head>
+<body class="text-slate-100 min-h-screen py-8 px-4 sm:px-6 lg:px-8 font-sans antialiased">
+    <div class="max-w-7xl mx-auto space-y-8">
+        
+        <!-- HEADER -->
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-slate-800 pb-6">
+            <div>
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl">🔮</span>
+                    <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        Daily AI Dashboard
+                    </h1>
+                </div>
+                <p class="text-sm text-slate-400 mt-1 font-medium">Asistente personal diario de productividad y aprendizaje científico</p>
+            </div>
+            <div class="flex flex-col md:items-end gap-1 font-mono text-xs text-slate-400">
+                <div class="flex items-center gap-2 bg-slate-800/50 border border-slate-700/60 px-3 py-1.5 rounded-lg">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Actualizado: Domingo, 05 de Julio de 2026</span>
+                </div>
+            </div>
+        </header>
+
+        
+        <!-- BANNER DE IA ACTIVO -->
+        <section class="bg-gradient-to-r from-indigo-950/30 via-slate-900/40 to-purple-950/30 border border-indigo-500/20 rounded-2xl p-5 shadow-xl shadow-indigo-950/10">
+            <div class="flex items-center gap-2 border-b border-slate-800/60 pb-3 mb-4">
+                <span class="text-xl">✨</span>
+                <h2 class="text-sm font-bold uppercase tracking-wider text-indigo-300">Análisis del Agente de IA</h2>
+                <span class="ml-auto text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Gemini Activo
+                </span>
+            </div>
+            <div class="flex flex-col md:flex-row gap-4">
+                
+            <div class="flex-1 min-w-[280px] bg-indigo-500/5 border border-indigo-500/10 p-4 rounded-xl space-y-2">
+                <span class="text-[10px] uppercase font-bold tracking-widest text-indigo-400 font-mono flex items-center gap-1.5">🎯 Estrategia del Agente</span>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">"¡Hoy es el día perfecto para alimentar tu curiosidad sin la presión de las fechas límite! Te propongo un reto táctico: reserva un bloque de solo 25 minutos (un Pomodoro) para explorar ese paper de arXiv como si fuera un juego de descubrimiento. Al limitar el tiempo, evitarás la procrastinación y cerrarás tu jornada con la increíble satisfacción de haber expandido tu mente."</p>
+            </div>
+            
+                
+            <div class="flex-1 min-w-[280px] bg-purple-500/5 border border-purple-500/10 p-4 rounded-xl space-y-2">
+                <span class="text-[10px] uppercase font-bold tracking-widest text-purple-400 font-mono flex items-center gap-1.5">🧠 Concepto de IA del Día</span>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">💡 <strong class="font-bold text-white">Concepto del Día</strong>: RAG (Generación Aumentada por Recuperación)<br/><br/>🧠 <strong class="font-bold text-white">Explicación</strong>: Es una técnica que permite a la IA buscar información externa en tiempo real antes de responderte. Imagina que en lugar de hacer un examen confiando solo en lo que recuerdas, pudieras hacerlo a "libro abierto" consultando una carpeta de apuntes específicos. Así, la IA evita inventar datos y te da respuestas ultraprecisas basadas en documentos reales y actualizados.</p>
+            </div>
+            
+            </div>
+        </section>
+        
+
+        <!-- MAIN GRID LAYOUT -->
+        <main class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- PANEL IZQUIERDO: CLIMA Y TAREAS (5 columnas) -->
+            <div class="lg:col-span-5 flex flex-col gap-6">
+                
+                <!-- CARD 1: CLIMA -->
+                <section class="bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 rounded-2xl p-5 hover:border-slate-700/80 transition-all duration-300 shadow-xl shadow-black/10">
+                    <div class="flex items-center justify-between border-b border-slate-800/60 pb-3 mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-lg">🌤️</span>
+                            <h2 class="text-sm font-bold uppercase tracking-wider text-slate-400">Clima Actual</h2>
+                        </div>
+                        <span class="text-xs font-mono text-slate-500">Madrid</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <span class="text-5xl shrink-0 filter drop-shadow-[0_4px_12px_rgba(99,102,241,0.2)]">☀️</span>
+                            <div>
+                                <div class="text-3xl sm:text-4xl font-extrabold text-slate-100 flex items-start">
+                                    35.2<span class="text-lg font-semibold text-indigo-400 mt-1">°C</span>
+                                </div>
+                                <p class="text-sm font-medium text-slate-300 mt-0.5">Cielo despejado</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 text-right gap-1 border-l border-slate-800/60 pl-4 font-mono text-[11px] text-slate-400">
+                            <div>💨 Viento: <span class="font-bold text-slate-200">5.1 km/h</span></div>
+                            <div>💧 Humedad: <span class="font-bold text-slate-200">22%</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CARD 2: TAREAS PROGRAMADAS -->
+                <section class="bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 rounded-2xl p-5 flex-1 hover:border-slate-700/80 transition-all duration-300 shadow-xl shadow-black/10 flex flex-col">
+                    <div class="flex items-center justify-between border-b border-slate-800/60 pb-3 mb-4 shrink-0">
+                        <div class="flex items-center gap-2">
+                            <span class="text-lg">🎯</span>
+                            <h2 class="text-sm font-bold uppercase tracking-wider text-slate-400">Tareas para Hoy</h2>
+                        </div>
+                        <span class="text-xs font-mono text-slate-500 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">1 asignadas</span>
+                    </div>
+                    <div class="space-y-3 flex-1 overflow-y-auto max-h-[350px] pr-1">
+                        
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/50 hover:border-indigo-500/30 hover:bg-slate-800/70 transition-all duration-200">
+                <div class="flex items-center h-6">
+                    <input type="checkbox"  disabled class="w-5 h-5 rounded border-slate-600 text-indigo-600 focus:ring-indigo-500 bg-slate-900 pointer-events-none transition-colors">
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm font-medium text-slate-200 break-words">Analizar el paper de arXiv recomendado por el agente</p>
+                    <div class="flex gap-2 mt-1.5 items-center">
+                        <span class="text-[10px] px-2 py-0.5 rounded-full border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 font-medium">Baja</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-700/40 text-slate-400 border border-slate-700/50">Aprendizaje</span>
+                    </div>
+                </div>
+            </div>
+            
+                    </div>
+                </section>
+                
+            </div>
+
+            <!-- PANEL DERECHO: PAPERS Y NOTICIAS (7 columnas) -->
+            <div class="lg:col-span-7 flex flex-col gap-6">
+                
+                <!-- CARD 3: RECOMENDACIÓN DE PAPER (arXiv) -->
+                <section class="bg-gradient-to-br from-indigo-950/40 via-slate-900/60 to-slate-900/60 backdrop-blur-xl border border-indigo-900/30 rounded-2xl p-5 hover:border-indigo-500/30 transition-all duration-300 shadow-xl shadow-black/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-slate-800/60 pb-3 mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-lg">📚</span>
+                                <h2 class="text-sm font-bold uppercase tracking-wider text-indigo-400">Paper Científico del Día</h2>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">arXiv AI Feed</span>
+                        </div>
+                        <div class="space-y-3">
+                            <h3 class="text-base sm:text-lg font-bold text-slate-100 hover:text-indigo-300 transition-colors leading-snug line-clamp-2">
+                                LACUNA: A Testbed for Evaluating Localization Precision for LLM Unlearning
+                            </h3>
+                            <p class="text-xs text-indigo-300 font-medium">Autores: <span class="text-slate-300">Matteo Boglioni, Thibault Rousset, Siva Reddy y otros</span></p>
+                            
+        <div class="bg-indigo-950/20 p-4 rounded-xl border border-indigo-500/20 text-slate-300 text-xs sm:text-sm leading-relaxed space-y-2">
+            <span class="text-[10px] uppercase font-bold tracking-widest text-indigo-400 font-mono flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
+                Sintetizado por Agente de IA Gemini
+            </span>
+            <div class="space-y-2">💡 <strong class="font-bold text-white">¿De qué trata?</strong>: Imagine que queremos borrar un recuerdo específico de la mente de una inteligencia artificial, como la dirección privada de una persona, pero sin que el modelo olvide quién es esa persona ni cómo hablar de otros temas circundantes. Este artículo presenta LACUNA, una innovadora plataforma de pruebas diseñada para evaluar con precisión quirúrgica los métodos de desaprendizaje en modelos de lenguaje. La herramienta mide lo que los autores llaman precisión de localización, es decir, evalúa si las técnicas actuales logran eliminar únicamente el dato sensible objetivo o si, por el contrario, causan daños colaterales borrando información útil y relacionada de forma accidental.<br/><br/>🚀 <strong class="font-bold text-white">¿Por qué es importante?</strong>: Este trabajo es un pilar fundamental para garantizar el derecho al olvido y la privacidad de los usuarios en la era de la inteligencia artificial, permitiendo que los modelos sean seguros y éticos sin perder su utilidad. Hasta ahora, intentar que una inteligencia artificial olvidara un dato era como realizar una cirugía cerebral con un martillo, destruyendo conocimientos valiosos en el proceso por falta de control. Con LACUNA, la comunidad científica finalmente dispone de un estándar de medición para diseñar bisturís digitales de alta precisión, abriendo el camino hacia una IA que pueda corregirse y respetar nuestra privacidad de manera quirúrgica, limpia y verdaderamente confiable.</div>
+        </div>
+        
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between gap-4 mt-5 pt-4 border-t border-slate-800/60">
+                        <span class="text-[11px] text-slate-500 font-mono">Publicado: 2026-07-02</span>
+                        <a href="https://arxiv.org/pdf/2607.02513v1" target="_blank" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-xs py-2 px-4 rounded-xl transition-all shadow-lg shadow-indigo-600/15">
+                            <span>📄 Abrir PDF Oficial</span>
+                            <span class="text-xs">→</span>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- CARD 4: NOTICIAS DE IA -->
+                <section class="bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 rounded-2xl p-5 hover:border-slate-700/80 transition-all duration-300 shadow-xl shadow-black/10">
+                    <div class="flex items-center justify-between border-b border-slate-800/60 pb-3 mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-lg">🔥</span>
+                            <h2 class="text-sm font-bold uppercase tracking-wider text-slate-400">Últimas Noticias de IA</h2>
+                        </div>
+                        <span class="text-xs font-mono text-slate-500">HF RSS Feed</span>
+                    </div>
+                    <div class="space-y-3">
+                        
+        <a href="https://huggingface.co/blog/cerebras-gemma4-voice-ai" target="_blank" class="group block p-4 rounded-xl bg-slate-800/30 border border-slate-700/50 hover:border-indigo-500/30 hover:bg-slate-800/60 transition-all duration-300">
+            <div class="flex items-start justify-between gap-3">
+                <span class="flex items-center justify-center w-6 h-6 text-xs font-bold rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-300 shrink-0">01</span>
+                <div class="flex-1 min-w-0">
+                    <h4 class="text-sm font-semibold text-slate-100 group-hover:text-indigo-400 transition-colors duration-200 line-clamp-2">Hugging Face and Cerebras bring Gemma 4 to real-time voice AI</h4>
+                    <p class="text-[11px] text-slate-500 mt-1 flex items-center gap-1">
+                        <span>📰 Blog/Feed</span> • <span>Wed, 01 Jul 2026</span>
+                    </p>
+                </div>
+                <span class="text-slate-500 group-hover:text-indigo-400 group-hover:translate-x-1 transition-all duration-200 text-sm shrink-0">→</span>
+            </div>
+        </a>
+        
+        <a href="https://huggingface.co/blog/ibm-research/scarfbench" target="_blank" class="group block p-4 rounded-xl bg-slate-800/30 border border-slate-700/50 hover:border-indigo-500/30 hover:bg-slate-800/60 transition-all duration-300">
+            <div class="flex items-start justify-between gap-3">
+                <span class="flex items-center justify-center w-6 h-6 text-xs font-bold rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-300 shrink-0">02</span>
+                <div class="flex-1 min-w-0">
+                    <h4 class="text-sm font-semibold text-slate-100 group-hover:text-indigo-400 transition-colors duration-200 line-clamp-2">ScarfBench: Benchmarking AI Agents for Enterprise Java Framework Migration</h4>
+                    <p class="text-[11px] text-slate-500 mt-1 flex items-center gap-1">
+                        <span>📰 Blog/Feed</span> • <span>Tue, 30 Jun 2026</span>
+                    </p>
+                </div>
+                <span class="text-slate-500 group-hover:text-indigo-400 group-hover:translate-x-1 transition-all duration-200 text-sm shrink-0">→</span>
+            </div>
+        </a>
+        
+        <a href="https://huggingface.co/blog/Dharma-AI/why-specialization-is-inevitable" target="_blank" class="group block p-4 rounded-xl bg-slate-800/30 border border-slate-700/50 hover:border-indigo-500/30 hover:bg-slate-800/60 transition-all duration-300">
+            <div class="flex items-start justify-between gap-3">
+                <span class="flex items-center justify-center w-6 h-6 text-xs font-bold rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-300 shrink-0">03</span>
+                <div class="flex-1 min-w-0">
+                    <h4 class="text-sm font-semibold text-slate-100 group-hover:text-indigo-400 transition-colors duration-200 line-clamp-2">Why Specialization Is Inevitable</h4>
+                    <p class="text-[11px] text-slate-500 mt-1 flex items-center gap-1">
+                        <span>📰 Blog/Feed</span> • <span>Tue, 30 Jun 2026</span>
+                    </p>
+                </div>
+                <span class="text-slate-500 group-hover:text-indigo-400 group-hover:translate-x-1 transition-all duration-200 text-sm shrink-0">→</span>
+            </div>
+        </a>
+        
+                    </div>
+                </section>
+                
+            </div>
+            
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="text-center pt-8 border-t border-slate-900/80 text-[11px] text-slate-500 font-mono flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>© 2026 Daily AI Dashboard • Generado automáticamente</p>
+            <p>Hereda de tareas.json • Hecho con Python puro</p>
+        </footer>
+        
+    </div>
+</body>
+</html>

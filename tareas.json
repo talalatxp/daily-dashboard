@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "titulo": "Revisar novedades de Gemini y GPT-4o",
+    "fecha": "2026-07-04",
+    "completada": false,
+    "prioridad": "Alta",
+    "categoria": "IA"
+  },
+  {
+    "id": 2,
+    "titulo": "Aprender a usar urllib en Python sin dependencias externas",
+    "fecha": "2026-07-04",
+    "completada": false,
+    "prioridad": "Media",
+    "categoria": "Aprendizaje"
+  },
+  {
+    "id": 3,
+    "titulo": "Implementar automatización local con Cron / Task Scheduler",
+    "fecha": "2026-07-04",
+    "completada": true,
+    "prioridad": "Alta",
+    "categoria": "Productividad"
+  },
+  {
+    "id": 4,
+    "titulo": "Analizar el paper de arXiv recomendado por el agente",
+    "fecha": "2026-07-05",
+    "completada": false,
+    "prioridad": "Baja",
+    "categoria": "Aprendizaje"
+  },
+  {
+    "id": 5,
+    "titulo": "Hacer copia de seguridad del proyecto local",
+    "fecha": "2026-07-06",
+    "completada": false,
+    "prioridad": "Media",
+    "categoria": "Productividad"
+  }
+]
